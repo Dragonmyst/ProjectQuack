@@ -1,0 +1,27 @@
+.prepend-group-box {
+    display: flex;
+    margin-top: $spacer * 0.5;
+    margin-bottom: $spacer * 0.5;
+
+    span {
+        font-size: small;
+        background-color: $gray-400;
+        padding: $spacer * 0.25;
+        border-color: rgb(118, 118, 118);
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-right-width: 0px;
+        border-style: inset;
+        border-radius: 3px 0px 0px 3px;
+    }
+
+    input {
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-right-width: 1px;
+        border-style: inset;
+        border-radius: 0px 3px 3px 0px;
+    }
+}
