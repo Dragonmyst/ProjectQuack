@@ -2,9 +2,9 @@
 ## About
 
 ### Documentation
-- [Requirements Gathering](../Documents/requirements-gathering)
-- [Technology Choices](../Documents/tech-stack)
-- []()
+- [Requirements Gathering](../ProjectQuack/Documents/requirements-gathering.md)
+- [Technology Choices](../ProjectQuack/Documents/tech-stack.md)
+- [Development Task List](../ProjectQuack/Documents/task-list.md)
 
 </br>
 ---
