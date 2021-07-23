@@ -1,18 +1,13 @@
 # ProjectQuack
 ## About
+
 ### Documentation
-- [Requirements Gathering]()
-- [Technology Choices]()
+- [Requirements Gathering](../Documents/requirements-gathering)
+- [Technology Choices](../Documents/tech-stack)
 - []()
 
-## Technology Stack
-- Frontend
-  - React
-- Backend
-  - Serverless using Azure Functions
-- Data Storage
-  - MySQL
-
+</br>
+---
 ## How to setup
 ### Tools Used
 - [Node.js](https://nodejs.org/en/)
