@@ -22,7 +22,7 @@ mysql -u root -p${rootpasswd} -e "USE projectquackdb; CREATE TABLE Feedings
     datefed DATETIME NOT NULL,
     createddate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     country VARCHAR(250) NOT NULL,
-    provincestate VARCHAR(250) NOT NULL,
+    provincestate VARCHAR(250) NULL,
     citytown VARCHAR(250) NULL,
     parkname VARCHAR(250) NULL,
     duckcount INT NULL,
