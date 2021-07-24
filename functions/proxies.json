@@ -3,7 +3,7 @@
   "proxies": {
     "proxy1": {
       "matchCondition": {
-        "methods": ["GET"],
+        "methods": ["GET", "POST"],
         "route": "/api/POSTFeederData"
       },
       "backendUri": "https://localhost/api/POSTFeederData"

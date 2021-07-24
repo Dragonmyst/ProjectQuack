@@ -2,8 +2,23 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
 const ServerAPI = {
     postFeedingData: async () => {
-        const response = await fetch(`${apiUrl}/POSTFeederData`)
-        return await response.json();
+        const data = {
+            text: "testing 1 2 3"
+        };
+
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+
+        }
+
+        const response = await fetch(`${apiUrl}/POSTFeederData`, options);
+        const status = response.status;
+        console.log(status);
+        return "successful";
     }
 }
 
