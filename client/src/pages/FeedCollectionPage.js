@@ -2,10 +2,15 @@ import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle';
 import { PrependedTextInput } from '../components/PrependedTextInput';
+import ServerAPI from '../ServerAPI';
 
 export const FeedCollectionPage = () => {
 	const { handleSubmit, control, reset } = useForm();
-	const onSubmit = data => console.log(data);
+	const onSubmit = async (data, e) => {
+		const response = await ServerAPI.postFeedingData(data);
+		console.log(response);
+		e.target.reset();
+	};
 
 	return (
 		<div className="container mt-3">

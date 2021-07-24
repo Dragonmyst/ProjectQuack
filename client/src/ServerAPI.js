@@ -1,11 +1,7 @@
 const apiUrl = process.env.REACT_APP_API_URL;
 
 const ServerAPI = {
-    postFeedingData: async () => {
-        const data = {
-            text: "testing 1 2 3"
-        };
-
+    postFeedingData: async (data) => {
         const options = {
             method: "POST",
             headers: {
