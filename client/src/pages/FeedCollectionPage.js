@@ -1,10 +1,10 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle';
 import { PrependedTextInput } from '../components/PrependedTextInput';
 
 export const FeedCollectionPage = () => {
-	const { handleSubmit } = useForm();
+	const { handleSubmit, control, reset } = useForm();
 	const onSubmit = data => console.log(data);
 
 	return (
@@ -18,50 +18,129 @@ export const FeedCollectionPage = () => {
 				<div className="border border-primary p-3 mb-3">
 					<div className="form-group">
 						<label>What date and time were the ducks fed?</label>
-						<DateTimePicker
-							required={true}
-							value={new Date()}
-							onChange={(value) => { console.log(value); }}
+						<Controller
+							name="datetime"
+							defaultValue={new Date()}
+							control={control}
+							render={({ field }) =>
+								<DateTimePicker
+									required={true}
+									value={field.value}
+									onChange={field.onChange}
+								/>
+							}
 						/>
 					</div>
 
 					<label>Where were the ducks fed?</label>
 					<div>
-						<PrependedTextInput
-							prependItem={"Country"}
+						<Controller
+							name="country"
+							defaultValue={''}
+							control={control}
+							render={({ field }) =>
+								<PrependedTextInput
+									prependItem={"Country"}
+									value={field.value}
+									onChange={(e) => field.onChange(e)}
+								/>
+							}
 						/>
-						<PrependedTextInput
-							prependItem={"Province or State"}
+						<Controller
+							name="provincestate"
+							defaultValue={''}
+							control={control}
+							render={({ field }) =>
+								<PrependedTextInput
+									prependItem={"Province or State"}
+									value={field.value}
+									onChange={(e) => field.onChange(e)}
+								/>
+							}
 						/>
-						<PrependedTextInput
-							prependItem={"City or Town"}
+						<Controller
+							name="citytown"
+							defaultValue={''}
+							control={control}
+							render={({ field }) =>
+								<PrependedTextInput
+									prependItem={"City or Town"}
+									value={field.value}
+									onChange={(e) => field.onChange(e)}
+								/>
+							}
 						/>
-						<PrependedTextInput
-							prependItem={"Park Name"}
+						<Controller
+							name="parkname"
+							defaultValue={''}
+							control={control}
+							render={({ field }) =>
+								<PrependedTextInput
+									prependItem={"Park Name"}
+									value={field.value}
+									onChange={(e) => field.onChange(e)}
+								/>
+							}
 						/>
 					</div>
 
 					<div className="form-group">
 						<label>How many ducks were fed?</label>
-						<input
-							type="number"
+						<Controller
+							name="duckqty"
+							defaultValue={''}
+							control={control}
+							render={({ field }) =>
+								<input
+									type="number"
+									value={field.value}
+									onChange={(e) => field.onChange(e)}
+								/>
+							}
 						/>
 					</div>
 
 					<label>What did you feed the ducks?</label>
 					<div>
 						<div className="form-group">
-							<input
-								type="text"
+							<Controller
+								name="feedtype"
+								defaultValue={''}
+								control={control}
+								render={({ field }) =>
+									<input
+										type="text"
+										value={field.value}
+										onChange={(e) => field.onChange(e)}
+									/>
+								}
 							/>
 						</div>
 						<div>
 							<label>How much did you feed the ducks?</label>
-							<PrependedTextInput
-								prependItem={"Quantity"}
+							<Controller
+								name="feedqty"
+								defaultValue={''}
+								control={control}
+								render={({ field }) =>
+									<PrependedTextInput
+										prependItem={"Quantity"}
+										value={field.value}
+										onChange={(e) => field.onChange(e)}
+									/>
+								}
 							/>
-							<PrependedTextInput
-								prependItem={"Unit"}
+							<Controller
+								name="feedqtyunit"
+								defaultValue={''}
+								control={control}
+								render={({ field }) =>
+									<PrependedTextInput
+										prependItem={"Unit"}
+										value={field.value}
+										onChange={(e) => field.onChange(e)}
+									/>
+								}
 							/>
 						</div>
 					</div>
