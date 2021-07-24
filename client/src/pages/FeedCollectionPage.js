@@ -5,11 +5,34 @@ import { PrependedTextInput } from '../components/PrependedTextInput';
 import ServerAPI from '../ServerAPI';
 
 export const FeedCollectionPage = () => {
-	const { handleSubmit, control, reset } = useForm();
+	const { handleSubmit, control, reset } = useForm({
+		defaultValues: {
+			datetime: new Date(),
+			country: '',
+			provincesate: '',
+			citytown: '',
+			parkname: '',
+			duckqty: 1,
+			feedtype: '',
+			feedqty: '',
+			feedqtyunit: ''
+		}
+	});
+
 	const onSubmit = async (data, e) => {
 		const response = await ServerAPI.postFeedingData(data);
 		console.log(response);
-		e.target.reset();
+		reset({
+			datetime: new Date(),
+			country: '',
+			provincesate: '',
+			citytown: '',
+			parkname: '',
+			duckqty: 1,
+			feedtype: '',
+			feedqty: '',
+			feedqtyunit: ''
+		});
 	};
 
 	return (
@@ -25,7 +48,6 @@ export const FeedCollectionPage = () => {
 						<label>What date and time were the ducks fed?</label>
 						<Controller
 							name="datetime"
-							defaultValue={new Date()}
 							control={control}
 							render={({ field }) =>
 								<DateTimePicker
@@ -41,7 +63,6 @@ export const FeedCollectionPage = () => {
 					<div>
 						<Controller
 							name="country"
-							defaultValue={''}
 							control={control}
 							render={({ field }) =>
 								<PrependedTextInput
@@ -53,7 +74,6 @@ export const FeedCollectionPage = () => {
 						/>
 						<Controller
 							name="provincestate"
-							defaultValue={''}
 							control={control}
 							render={({ field }) =>
 								<PrependedTextInput
@@ -65,7 +85,6 @@ export const FeedCollectionPage = () => {
 						/>
 						<Controller
 							name="citytown"
-							defaultValue={''}
 							control={control}
 							render={({ field }) =>
 								<PrependedTextInput
@@ -77,7 +96,6 @@ export const FeedCollectionPage = () => {
 						/>
 						<Controller
 							name="parkname"
-							defaultValue={''}
 							control={control}
 							render={({ field }) =>
 								<PrependedTextInput
@@ -93,11 +111,11 @@ export const FeedCollectionPage = () => {
 						<label>How many ducks were fed?</label>
 						<Controller
 							name="duckqty"
-							defaultValue={''}
 							control={control}
 							render={({ field }) =>
 								<input
 									type="number"
+									min={1}
 									value={field.value}
 									onChange={(e) => field.onChange(e)}
 								/>
@@ -110,7 +128,6 @@ export const FeedCollectionPage = () => {
 						<div className="form-group">
 							<Controller
 								name="feedtype"
-								defaultValue={''}
 								control={control}
 								render={({ field }) =>
 									<input
@@ -125,7 +142,6 @@ export const FeedCollectionPage = () => {
 							<label>How much did you feed the ducks?</label>
 							<Controller
 								name="feedqty"
-								defaultValue={''}
 								control={control}
 								render={({ field }) =>
 									<PrependedTextInput
@@ -137,7 +153,6 @@ export const FeedCollectionPage = () => {
 							/>
 							<Controller
 								name="feedqtyunit"
-								defaultValue={''}
 								control={control}
 								render={({ field }) =>
 									<PrependedTextInput
