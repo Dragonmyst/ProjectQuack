@@ -3,7 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 export const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+        <Navbar className="px-3" collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Navbar.Brand href="/">
                 Project Quack
             </Navbar.Brand>
