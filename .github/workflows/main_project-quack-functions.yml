@@ -40,5 +40,5 @@ jobs:
       with:
         app-name: 'project-quack-functions'
         slot-name: 'production'
-        package: functions
+        package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_2b258fac03ba43798c396325f26015cd }}
