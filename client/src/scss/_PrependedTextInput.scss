@@ -24,4 +24,15 @@
         border-style: inset;
         border-radius: 0px 3px 3px 0px;
     }
+
+    &.error {
+        span {
+            border-color: $danger;
+        }
+
+        input {
+            border-color: $danger;
+            background-color: mix( $white, $danger, 90% );;
+        }
+    }
 }

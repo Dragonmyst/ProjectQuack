@@ -1,0 +1,7 @@
+.required-astrix{
+    &::after {
+        content: '*';
+        color: $danger;
+        margin-left: $spacer * 0.25;
+    }
+}

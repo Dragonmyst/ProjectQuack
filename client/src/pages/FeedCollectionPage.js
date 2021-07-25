@@ -3,18 +3,20 @@ import { Controller, useForm } from 'react-hook-form';
 import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle';
 import { PrependedTextInput } from '../components/PrependedTextInput';
 import ServerAPI from '../ServerAPI';
+import { CustomInputBox } from '../components/CustomInputBox';
 
 export const FeedCollectionPage = () => {
 	const { handleSubmit, control, reset } = useForm({
+		mode: 'onSubmit',
+		reValidateMode: 'onChange',
 		defaultValues: {
-			datetime: new Date(),
+			datetimefed: new Date(),
 			country: '',
-			provincesate: '',
+			provincestate: '',
 			citytown: '',
 			parkname: '',
 			duckqty: 1,
 			feedtype: '',
-			feedqty: '',
 			feedqtyunit: ''
 		}
 	});
@@ -23,14 +25,13 @@ export const FeedCollectionPage = () => {
 		const response = await ServerAPI.postFeedingData(data);
 		console.log(response);
 		reset({
-			datetime: new Date(),
+			datetimefed: new Date(),
 			country: '',
-			provincesate: '',
+			provincestate: '',
 			citytown: '',
 			parkname: '',
 			duckqty: 1,
 			feedtype: '',
-			feedqty: '',
 			feedqtyunit: ''
 		});
 	};
@@ -44,29 +45,40 @@ export const FeedCollectionPage = () => {
 				onSubmit={handleSubmit(onSubmit)}
 			>
 				<div className="border border-primary p-3 mb-3">
-					<div className="form-group">
-						<label>What date and time were the ducks fed?</label>
-						<Controller
-							name="datetime"
-							control={control}
-							render={({ field }) =>
-								<DateTimePicker
-									required={true}
-									value={field.value}
-									onChange={field.onChange}
-								/>
-							}
-						/>
+					<div className="form-group mb-3">
+						<label className="required-astrix">What date and time were the ducks fed?</label>
+						<div className="d-flex my-2">
+							<Controller
+								name="datetimefed"
+								control={control}
+								rules={{
+									required: true,
+									message: "Date and time ducks were fed is required"
+								}}
+								render={({ field }) =>
+									<DateTimePicker
+										required={true}
+										value={field.value}
+										onChange={field.onChange}
+									/>
+								}
+							/>
+						</div>
 					</div>
 
-					<label>Where were the ducks fed?</label>
-					<div>
+					<div className="form-group mb-3">
+						<label>Where were the ducks fed?</label>
 						<Controller
 							name="country"
 							control={control}
-							render={({ field }) =>
+							rules={{
+								required: true,
+							}}
+							render={({ field, fieldState }) =>
 								<PrependedTextInput
 									prependItem={"Country"}
+									required={true}
+									hasError={fieldState.error}
 									value={field.value}
 									onChange={(e) => field.onChange(e)}
 								/>
@@ -107,67 +119,84 @@ export const FeedCollectionPage = () => {
 						/>
 					</div>
 
-					<div className="form-group">
-						<label>How many ducks were fed?</label>
+					<div className="form-group mb-3">
+						<label className="required-astrix">How many ducks were fed?</label>
 						<Controller
 							name="duckqty"
 							control={control}
-							render={({ field }) =>
-								<input
+							rules={{
+								required: true,
+							}}
+							render={({ field, fieldState }) =>
+								<CustomInputBox
 									type="number"
 									min={1}
 									value={field.value}
+									hasError={fieldState.error}
 									onChange={(e) => field.onChange(e)}
 								/>
 							}
 						/>
 					</div>
 
-					<label>What did you feed the ducks?</label>
-					<div>
-						<div className="form-group">
-							<Controller
-								name="feedtype"
-								control={control}
-								render={({ field }) =>
-									<input
-										type="text"
-										value={field.value}
-										onChange={(e) => field.onChange(e)}
-									/>
-								}
-							/>
-						</div>
-						<div>
-							<label>How much did you feed the ducks?</label>
-							<Controller
-								name="feedqty"
-								control={control}
-								render={({ field }) =>
-									<PrependedTextInput
-										prependItem={"Quantity"}
-										value={field.value}
-										onChange={(e) => field.onChange(e)}
-									/>
-								}
-							/>
-							<Controller
-								name="feedqtyunit"
-								control={control}
-								render={({ field }) =>
-									<PrependedTextInput
-										prependItem={"Unit"}
-										value={field.value}
-										onChange={(e) => field.onChange(e)}
-									/>
-								}
-							/>
-						</div>
+					<div className="form-group mb-3">
+						<label className="required-astrix">What did you feed the ducks?</label>
+						<Controller
+							name="feedtype"
+							control={control}
+							rules={{
+								required: true,
+							}}
+							render={({ field, fieldState }) =>
+								<CustomInputBox
+									type="text"
+									value={field.value}
+									hasError={fieldState.error}
+									onChange={(e) => field.onChange(e)}
+								/>
+							}
+						/>
+					</div>
+
+					<div className="mb-3">
+						<label>How much did you feed the ducks?</label>
+						<Controller
+							name="feedqty"
+							control={control}
+							rules={{
+								required: true,
+							}}
+							render={({ field, fieldState }) =>
+								<PrependedTextInput
+									prependItem={"Quantity"}
+									required={true}
+									hasError={fieldState.error}
+									value={field.value}
+									onChange={(e) => field.onChange(e)}
+								/>
+							}
+						/>
+						<Controller
+							name="feedqtyunit"
+							control={control}
+							rules={{
+								required: true,
+							}}
+							render={({ field, fieldState }) =>
+								<PrependedTextInput
+									prependItem={"Unit"}
+									required={true}
+									hasError={fieldState.error}
+									value={field.value}
+									onChange={(e) => field.onChange(e)}
+								/>
+							}
+						/>
 					</div>
 				</div>
 
 				<input type="submit" className="btn btn-primary" />
 			</form>
-		</div>
+		</div >
 	);
 };

@@ -28,7 +28,9 @@ data for her PhD thesis.
    - province/state -Reason: I am not sure all countries have them.
    - city/town -Reason: The ducks may not be within a city or town.
    - park name -Reason: The ducks may not be within an actual park.
-   - feed quantity -Reason: Might be hard to guess if they are not measuring it out as they feed or they do not use all of it up.
-1. Decided on having individual fields for how the location is collected. I would think this would make it more accurate and easier to filter the data. It also allows for better type ahead fields or the use of drop downs.
-1. Decided not to worry for this assignment about the need for parsing or massaging the data. The data is really simple and would likely not need calculations at this point.
-1. 
+2. Decided on having individual fields for how the location is collected. I would think this would make it more accurate and easier to filter the data. It also allows for better type ahead fields or the use of drop downs.
+3. Decided not to worry for this assignment about the need for parsing or massaging the data. The data is really simple and would likely not need calculations at this point.
+
+## My nice to do if I have time
+- ask for browser location and save that to help with location determination
+  - could possibly use to prepopulate the fields  

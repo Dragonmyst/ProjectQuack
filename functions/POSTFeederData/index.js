@@ -1,22 +1,29 @@
 const db = require("../db");
 
-module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+module.exports = function (context, req) {
+    const data = req.body;
 
-    // db.query("INSERT INTO Feedings (datefed, country, feedtype) VALUES (?, ?, ?)", [new Date(), "Canada", "Bread"], (error, results) => {
-    //     if (error) console.log(error);
-    //     console.log(results);
-    // });
+    console.log(data);
 
-    // db.query("SELECt * FROM Feedings", (error, results) => {
-    //     if (error) console.log(error);
-    //     console.log(results);
-    // });
+    db.query(`
+        INSERT INTO Feedings 
+            (dateTimeFedUTC, country, provinceState, cityTown, parkName, duckCount, feedType, feedQty, feedQtyUnit) 
+        VALUES 
+            (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [data.datetimefed, data.country, data.provincestate, data.citytown, data.parkname, data.duckqty, data.feedtype, data.feedqty, data.feedqtyunit],
+        (error, results) => {
+            if (error) {
+                context.log("Error message was: " + error.message);
+                throw error;
+            } else {
+                context.res = {
+                    status: 201,
+                    body: {
+                        results
+                    }
+                };
 
-    console.log(req.body);
-
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        status: 200
-    };
-}
+                context.done();
+            }
+        });
+};

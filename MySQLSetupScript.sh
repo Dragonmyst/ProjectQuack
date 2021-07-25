@@ -19,16 +19,16 @@ echo "Creating table..."
 mysql -u root -p${rootpasswd} -e "USE projectquackdb; CREATE TABLE Feedings
 (
     id INT NOT NULL AUTO_INCREMENT,
-    datefed DATETIME NOT NULL,
-    createddate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    dateTimeFedUTC DATETIME NOT NULL,
+    createdDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     country VARCHAR(250) NOT NULL,
-    provincestate VARCHAR(250) NULL,
-    citytown VARCHAR(250) NULL,
-    parkname VARCHAR(250) NULL,
-    duckcount INT NULL,
-    feedtype VARCHAR(250) NOT NULL,
-    quantity DOUBLE NULL,
-    quantityunit VARCHAR(250) NULL,
+    provinceState VARCHAR(250) NULL,
+    cityTown VARCHAR(250) NULL,
+    parkName VARCHAR(250) NULL,
+    duckCount INT NOT NULL,
+    feedType VARCHAR(250) NOT NULL,
+    feedQty DOUBLE NOT NULL,
+    feedQtyUnit VARCHAR(250) NOT NULL,
     PRIMARY KEY pk (id)
 );"
 echo "Table created!"
