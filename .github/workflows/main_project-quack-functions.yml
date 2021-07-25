@@ -28,7 +28,7 @@ jobs:
     - name: 'Resolve Project Dependencies Using Npm'
       shell: pwsh
       run: |
-        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/functions'
+        pushd './functions'
         npm install
         npm run build --if-present
         npm run test --if-present
@@ -40,5 +40,5 @@ jobs:
       with:
         app-name: 'project-quack-functions'
         slot-name: 'production'
-        package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+        package: functions
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_2b258fac03ba43798c396325f26015cd }}
