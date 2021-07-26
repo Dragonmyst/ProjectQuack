@@ -3,22 +3,25 @@ import classnames from 'classnames';
 
 export const CustomInputBox = ({
     type,
+    styles,
     value, 
+    placeholder,
     onChange, 
     disabled,
     hasError,
     min,
 }) => {
     return (
-        <React.Fragment>
+        <div className={styles} >
             <input
                 type={type}
                 className={classnames('custom-form-input-box', {'error': hasError})}
                 value={value}
+                placeholder={placeholder}
                 onChange={onChange}
                 disabled={disabled}
                 min={min}
             />
-        </React.Fragment>
+        </div>
     );
 };

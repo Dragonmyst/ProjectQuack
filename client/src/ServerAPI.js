@@ -15,12 +15,7 @@ const ServerAPI = {
 
         const response = await fetch('api/postFeedingData', options);
         const status = response.status;
-        console.log(response);
-        console.log(response.status);
-        if (status !== 201) {
-            return "unsuccessful";
-        }
-        return "successful";
+        return response.status;
     }
 }
 
