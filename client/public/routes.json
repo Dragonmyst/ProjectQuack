@@ -1,6 +1,9 @@
 {
     "routes": [
         {
+            "route": "/api/postFeedingData"
+        },
+        {
             "route": "/*",
             "serve": "/index.html",
             "statusCode": 200

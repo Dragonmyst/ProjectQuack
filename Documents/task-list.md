@@ -31,8 +31,9 @@ Tasks for Development:
 Nice to have tasks:
 |Task  |Estimate  |Notes  |
 |---------|---------|---------|
-|Create Timer Function     |30min         |         |
 |Create schedule form     |30min         |         |
+|Create Function to save schedule to db     |15min         |         |
+|Create Timer Function     |30min         |         |
 |Determine how to maintain schedule     |30min         |Thinking email of link and a reminder email         |
 |Write Unit Tests     |30min         |         |
 

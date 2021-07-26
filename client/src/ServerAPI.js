@@ -15,7 +15,7 @@ const ServerAPI = {
 
         }
 
-        const response = await fetch(`${apiUrl}/POSTFeederData`, options);
+        const response = await fetch('api/postFeedingData', options);
         const status = response.status;
         console.log(response);
         console.log(response.status);
