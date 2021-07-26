@@ -1,7 +1,8 @@
 .prepend-group-box {
-    display: flex;
+    display: inline-flex;
     margin-top: $spacer * 0.5;
     margin-bottom: $spacer * 0.5;
+    margin-right: $spacer * 0.25;
 
     span {
         font-size: small;

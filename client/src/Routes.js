@@ -8,9 +8,9 @@ const Routes = (props) => {
     return (
         <React.Fragment>
             <Switch>
-                <Route exact={true} path="/about" component={AboutPage} />
-                <Route exact={true} path="/feederform" render={() => <Redirect to="/feederform" />} />
-                <Route exact={true} path="/" component={FeedCollectionPage} />
+                <Route exact={true} path="/" component={AboutPage} />
+                <Route exact={true} path="/about" render={() => <Redirect to="/" />} />
+                <Route exact={true} path="/feederform" component={FeedCollectionPage} />
                 
                 <Route path="*" component={Page404} />
             </Switch>

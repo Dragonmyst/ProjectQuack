@@ -14,7 +14,6 @@ const ServerAPI = {
         }
 
         const response = await fetch('api/postFeedingData', options);
-        const status = response.status;
         return response.status;
     }
 }
