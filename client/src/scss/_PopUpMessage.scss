@@ -1,24 +1,11 @@
-.toast-header-danger {
+.toast-header-error {
     color: $secondary;
     background-color: $danger;
 }
 
-.toast-body-danger {
+.toast-body-error {
     color: $danger;
     background-color: mix( $white, $danger, 90% );
-}
-
-.toast-header-success {
-    color: $success;
-    background-color: $danger;
-}
-
-.toast-body-success {
-    color: $success;
-    background-color: mix( $white, $success, 90% );
-    border-style: outset;
-    border-radius: 5px;
-    border-color: $success;
 }
 
 .toast-btn-error {
@@ -29,7 +16,20 @@
     border-color: $danger;
 }
 
+.toast-header-success {
+    color: $secondary;
+    background-color: $success;
+}
+
+.toast-body-success {
+    color: $success;
+    background-color: mix( $white, $success, 90% );
+}
+
 .toast-btn-success {
     color: $success;
-    background-color: $secondary;
+    background-color: mix( $white, $success, 75% );
+    border-style: outset;
+    border-radius: 5px;
+    border-color: $success;
 }

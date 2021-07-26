@@ -27,7 +27,8 @@ export const FeedCollectionPage = () => {
 		}
 	});
 
-	const onSubmit = async (data) => {
+	const onSubmit = async (data, e) => {
+		e.preventDefault();
 		setSubmitting(true);
 		ServerAPI.postFeedingData(data)
 			.then(status => {

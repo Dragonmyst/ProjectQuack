@@ -1,4 +1,4 @@
-// const db = require("../db");
+const db = require("../db");
 
 module.exports = function (context, req) {
     const data = req.body;
@@ -27,11 +27,3 @@ module.exports = function (context, req) {
             }
         });
 };
-
-const db = mysql.createConnection({
-    host: process.env["MySQLConnection_HOST"],
-    user: process.env["MySQLConnection_USER"],
-    password: process.env["MySQLConnection_PASSWORD"],
-    database: process.env["MySQLConnection_DB"],
-    port: process.env["MYSQLConnection_PORT"]
-});

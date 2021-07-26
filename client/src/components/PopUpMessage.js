@@ -11,7 +11,7 @@ export const PopUpMessage = ({ show, toggle, type, headerMsg, bodyMsg }) => {
         <strong className="me-auto">{headerMsg}</strong>
         <button
           type="button"
-          className={classnames("ml-2 mb-1 close", { 'toast-btn-error': type === 'error' }, { 'toast-btn-sucess': type === 'success' })}
+          className={classnames("ml-2 mb-1 close", { 'toast-btn-error': type === 'error' }, { 'toast-btn-success': type === 'success' })}
           onClick={toggle} aria-label="Close"
         >
           <span aria-hidden="true">×</span>
