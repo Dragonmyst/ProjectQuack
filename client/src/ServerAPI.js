@@ -1,5 +1,3 @@
-const apiUrl = process.env.REACT_APP_API_URL;
-
 const ServerAPI = {
     postFeedingData: async (data) => {
         const datetime = data.datetimefed;
