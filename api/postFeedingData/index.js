@@ -4,6 +4,7 @@ module.exports = function (context, req) {
     const data = req.body;
 
     console.log(process.env["MySQLConnection_HOST"]);
+    context.log(process.env["MySQLConnection_HOST"]);
 
     db.query(`
         INSERT INTO Feedings 
