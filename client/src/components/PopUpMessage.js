@@ -6,7 +6,7 @@ export const PopUpMessage = ({ show, toggle, type, headerMsg, bodyMsg }) => {
   return (
     <Toast show={show} onClose={toggle}>
       <div
-        className={classnames('toast-header', { 'toast-header-danger': type === 'error' }, { 'toast-header-success': type === 'success' })}
+        className={classnames('toast-header', { 'toast-header-error': type === 'error' }, { 'toast-header-success': type === 'success' })}
       >
         <strong className="me-auto">{headerMsg}</strong>
         <button
@@ -18,7 +18,7 @@ export const PopUpMessage = ({ show, toggle, type, headerMsg, bodyMsg }) => {
         </button>
       </div>
       <div
-        className={classnames('toast-body', { 'toast-body-danger ': type === 'error' }, { 'toast-body-success ': type === 'success' })}
+        className={classnames('toast-body', { 'toast-body-error ': type === 'error' }, { 'toast-body-success ': type === 'success' })}
       >
         {bodyMsg}
       </div>
