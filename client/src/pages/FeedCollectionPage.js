@@ -33,8 +33,6 @@ export const FeedCollectionPage = () => {
 		setSubmitting(true);
 		ServerAPI.postFeedingData(data)
 			.then(status => {
-				console.log(status);
-
 				if (status !== 201) {
 					setSubmitting(false);
 					displayToast(setShowErrorToast);

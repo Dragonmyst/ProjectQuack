@@ -3,9 +3,6 @@ const db = require("../db");
 module.exports = function (context, req) {
     const data = req.body;
 
-    console.log(process.env["MySQLConnection_HOST"]);
-    context.log(process.env["MySQLConnection_HOST"]);
-
     db.connect(
         function (err) {
             if (err) {
