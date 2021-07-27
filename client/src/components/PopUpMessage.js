@@ -2,20 +2,13 @@ import React from 'react';
 import { Toast } from 'react-bootstrap';
 import classnames from 'classnames';
 
-export const PopUpMessage = ({ show, toggle, type, headerMsg, bodyMsg }) => {
+export const PopUpMessage = ({ show, type, headerMsg, bodyMsg }) => {
   return (
-    <Toast show={show} onClose={toggle}>
+    <Toast show={show}>
       <div
         className={classnames('toast-header', { 'toast-header-error': type === 'error' }, { 'toast-header-success': type === 'success' })}
       >
         <strong className="me-auto">{headerMsg}</strong>
-        <button
-          type="button"
-          className={classnames("ml-2 mb-1 close", { 'toast-btn-error': type === 'error' }, { 'toast-btn-success': type === 'success' })}
-          onClick={toggle} aria-label="Close"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
       </div>
       <div
         className={classnames('toast-body', { 'toast-body-error ': type === 'error' }, { 'toast-body-success ': type === 'success' })}

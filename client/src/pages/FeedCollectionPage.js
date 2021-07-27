@@ -23,6 +23,7 @@ export const FeedCollectionPage = () => {
 			parkname: "",
 			duckqty: 1,
 			feedtype: "",
+			feedqty: "",
 			feedqtyunit: ""
 		}
 	});
@@ -36,11 +37,11 @@ export const FeedCollectionPage = () => {
 
 				if (status !== 201) {
 					setSubmitting(false);
-					setShowErrorToast(true);
+					displayToast(setShowErrorToast);
 					return;
 				}
 
-				setShowSuccessToast(true);
+				displayToast(setShowSuccessToast);
 
 				reset({
 					datetimefed: new Date(),
@@ -50,6 +51,7 @@ export const FeedCollectionPage = () => {
 					parkname: "",
 					duckqty: 1,
 					feedtype: "",
+					feedqty: "",
 					feedqtyunit: ""
 				});
 
@@ -57,6 +59,12 @@ export const FeedCollectionPage = () => {
 			});
 
 	};
+
+	const displayToast = (setToast) => {
+		setToast(true);
+
+		setTimeout(() => setToast(false), 2000);
+	}
 
 	return (
 		<PageWrapper>
@@ -91,8 +99,7 @@ export const FeedCollectionPage = () => {
 								name="datetimefed"
 								control={control}
 								rules={{
-									required: true,
-									message: "Date and time ducks were fed is required"
+									required: true
 								}}
 								render={({ field }) =>
 									<DateTimePicker
@@ -120,7 +127,7 @@ export const FeedCollectionPage = () => {
 										required={true}
 										hasError={fieldState.error}
 										value={field.value}
-										onChange={(e) => field.onChange(e)}
+										onChange={field.onChange}
 									/>
 								}
 							/>
@@ -142,7 +149,7 @@ export const FeedCollectionPage = () => {
 									<PrependedTextInput
 										prependItem={"City or Town"}
 										value={field.value}
-										onChange={(e) => field.onChange(e)}
+										onChange={field.onChange}
 									/>
 								}
 							/>
@@ -153,7 +160,7 @@ export const FeedCollectionPage = () => {
 									<PrependedTextInput
 										prependItem={"Park Name"}
 										value={field.value}
-										onChange={(e) => field.onChange(e)}
+										onChange={field.onChange}
 									/>
 								}
 							/>
@@ -193,14 +200,14 @@ export const FeedCollectionPage = () => {
 									type="text"
 									value={field.value}
 									hasError={fieldState.error}
-									onChange={(e) => field.onChange(e)}
+									onChange={field.onChange}
 								/>
 							}
 						/>
 					</div>
 
 					<div className="mb-3">
-						<label>How much did you feed the ducks? (ie. 1 slice, 2.5 cups, 1.26 g)</label>
+						<label className="required-astrix" >How much did you feed the ducks? (ie. 1 slice, 2.5 cups, 1.26 g)</label>
 						<div className="flex-row">
 							<Controller
 								name="feedqty"
@@ -214,7 +221,7 @@ export const FeedCollectionPage = () => {
 										required={true}
 										hasError={fieldState.error}
 										value={field.value}
-										onChange={(e) => field.onChange(e)}
+										onChange={field.onChange}
 									/>
 								}
 							/>
@@ -230,7 +237,7 @@ export const FeedCollectionPage = () => {
 										required={true}
 										hasError={fieldState.error}
 										value={field.value}
-										onChange={(e) => field.onChange(e)}
+										onChange={field.onChange}
 									/>
 								}
 							/>

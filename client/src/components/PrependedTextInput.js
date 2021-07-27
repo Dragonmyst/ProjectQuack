@@ -3,7 +3,6 @@ import classnames from 'classnames';
 
 export const PrependedTextInput = ({
     prependItem,
-    styles,
     value,
     placeholder,
     onChange,
