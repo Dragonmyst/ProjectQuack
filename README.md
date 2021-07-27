@@ -9,8 +9,9 @@ The purpose of this app is to crowdsource data about how ducks are being fed aro
 - [Retrospective](../ProjectQuack/Documents/retrospective.md)
 
 </br>
----
+
 ## How to setup
+
 ### Tools Used
 - [Node.js](https://nodejs.org/en/)
 - [HomeBrew](https://brew.sh/)
