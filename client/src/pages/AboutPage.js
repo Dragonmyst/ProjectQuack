@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageWrapper } from '../components/PageWrapper';
 
-export const AboutPage = () => {
+const AboutPage = () => {
 	return (
 		<PageWrapper>
 			<h1>About Project Quack</h1>
@@ -18,3 +18,5 @@ export const AboutPage = () => {
 		</PageWrapper>
 	)
 }
+
+export default AboutPage;

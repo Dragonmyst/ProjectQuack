@@ -1,4 +1,7 @@
-Tasks for Development: 
+# Task List and Time Spent
+
+## My Planning and Breakdown of Tasks:
+### Tasks for Development: 
 |Task  |Subtask  |Estimate  |Notes |
 |---------|---------|---------|---------|
 |Local Envrionment Setup     |         |         |         |
@@ -28,7 +31,9 @@ Tasks for Development:
 |Documentation     |         |120 min         |         |
 |     |         |         |         |
 
-Nice to have tasks:
+</br>
+
+### Nice to have tasks:
 |Task  |Estimate  |Notes  |
 |---------|---------|---------|
 |Create schedule form     |30min         |         |
@@ -37,3 +42,19 @@ Nice to have tasks:
 |Determine how to maintain schedule     |30min         |Thinking email of link and a reminder email         |
 |Write Unit Tests     |30min         |         |
 
+</br>
+
+## Time Roughly Spent in the End
+In the end, I estimate I spent the following:
+- designing and decisions around requirements: 1.5 hour
+- local mysql setup: 1 hour
+- developing (coding, validation, error handling, styling) front end client and api: 3 hour 
+- integrating local api with local mysql: 1 hour
+- setting up Azure Static Web app: 0.5 hour
+- troubleshooting api function CI/CD: 1 hour
+- setting up Azure MySQL: 1 hour
+- troubleshooting Azure MySQL and api function integration: 2 hour
+- learning and attempting to write unit tests: 1 hour <--feel really bad that I didn't spend more time to get this done :(
+- documentation: 1 hour
+  
+### Total time actually spent: ~13 hours

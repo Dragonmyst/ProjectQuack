@@ -22,6 +22,7 @@ data for her PhD thesis.
 1. For the nice to have repeat scheduling
    1. Are you wanting them to have a sign up and login to manage it? Or how would it be managed (ie. updated, canceled, etc.)?
    1. What happens if the feed forgets about it? Does this not create invalid data? Would it make sense to send a reminder or have an expirery? 
+   1. How are they allowed to schedule the feedings? For example, is it one time across certain days? or can you set different times for different days?
 
 ## Assumptions and decisions made
 1. To reduce the barrier and make more feeders want to enter there data, I decided on the following fields as being optional.

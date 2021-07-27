@@ -1,3 +1,4 @@
 .vscode
 .github/workflows/main_project-quack-functions.yml
 functions
+*.drawio

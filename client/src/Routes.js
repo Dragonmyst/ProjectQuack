@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Route, Switch } from 'react-router-dom';
-import { AboutPage } from './pages/AboutPage';
-import { FeedCollectionPage } from './pages/FeedCollectionPage';
+import AboutPage from './pages/AboutPage';
+import FeedCollectionPage from './pages/FeedCollectionPage';
 import { Page404 } from './pages/Page404';
 
 const Routes = (props) => {

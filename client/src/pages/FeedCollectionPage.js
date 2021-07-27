@@ -7,7 +7,7 @@ import { CustomInputBox } from "../components/CustomInputBox";
 import { PopUpMessage } from "../components/PopUpMessage";
 import { PageWrapper } from "../components/PageWrapper";
 
-export const FeedCollectionPage = () => {
+const FeedCollectionPage = () => {
 	const [submitting, setSubmitting] = React.useState(false);
 	const [showErrorToast, setShowErrorToast] = React.useState(false);
 	const [showSuccessToast, setShowSuccessToast] = React.useState(false);
@@ -248,3 +248,5 @@ export const FeedCollectionPage = () => {
 		</PageWrapper>
 	);
 };
+
+export default FeedCollectionPage;
