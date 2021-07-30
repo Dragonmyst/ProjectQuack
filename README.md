@@ -3,10 +3,10 @@
 The purpose of this app is to crowdsource data about how ducks are being fed around the world. Scientists will then use this data for analysis.
 
 ### Documentation
-- [Requirements Gathering and Decisions](../ProjectQuack/Documents/requirements-gathering.md)
-- [Technology Choices](../ProjectQuack/Documents/tech-stack.md)
-- [Task List and Time Spent](../ProjectQuack/Documents/task-list.md)
-- [Retrospective](../ProjectQuack/Documents/retrospective.md)
+- [Requirements Gathering and Decisions](Documents/requirements-gathering.md)
+- [Technology Choices](Documents/tech-stack.md)
+- [Task List and Time Spent](Documents/task-list.md)
+- [Retrospective](Documents/retrospective.md)
 
 </br>
 
