@@ -1,6 +1,7 @@
 # Development Retrospective
 - Time: 
   - I work during the day and was moving during the week and weekend. So I had to fit time in where I could.
+  - Actually create a sprint board to be able to move tasks similar to doing work at work.
 - Database on Mac: 
   - I have never developed anything on my mac that required a database. For work I use a windows machine and SSMS. 
 - Azure MySQL:
@@ -8,6 +9,10 @@
 - Azure Static Web App's Functions integration with Azure MySQL
   - There wasn't a whole lot of documentation on this. It was a lot of troubleshooting. I was hoping to make it more secure than it is but to get it working I had to make access more public.
 - React Unit Testing:
-  - It has been quite a few years since I have done React unit testing. My current place of employment does not do unit testing. I thought it would be no problem to remeber how to do it. However, it seems unit testing has really changed since the last time I have done it. Lesson learned is not to leave it till last, so I have time to read up and relearn. 
+  - It has been quite a few years since I have done React unit testing. My current place of employment does not do unit testing. I thought it would be no problem to remeber how to do it. However, it seems unit testing has really changed(especially with React Hooks) since the last time I have done it. Lesson learned is not to leave it till last, so I have time to read up and relearn.
+  - Try to do TDD. This would have indicated that I needed to re-learn how to test in React. 
 - Styling:
   - I love playing with styling too much and tend to get carried away looking up different ways of doing things. I needed to either timebox and set an alarm, or leave it till last and get functionality working first. 
+-  Documentation:
+  - Spend more time documenting my technology stack choices in the beginning when architecting, as my points are still fresh in my mind. I rushed to add my documentation on them at the end.  
+  - Add more about the security around using Azure Static Web apps and their integrated serverless functions.
