@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Route, Switch } from 'react-router-dom';
 import AboutPage from './pages/AboutPage';
 import FeedCollectionPage from './pages/FeedCollectionPage';
+import SchedulePage from './pages/SchedulePage';
 import { Page404 } from './pages/Page404';
 
 const Routes = (props) => {
@@ -10,6 +11,7 @@ const Routes = (props) => {
             <Switch>
                 <Route exact={true} path="/" component={AboutPage} />
                 <Route exact={true} path="/feederform" component={FeedCollectionPage} />
+                <Route exact={true} path="/scheduleform" component={SchedulePage} />
                 
                 <Route path="*" component={Page404} />
             </Switch>

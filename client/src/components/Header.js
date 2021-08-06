@@ -12,6 +12,7 @@ export const Header = () => {
                 <Nav className="mr-auto">
                     <Nav.Link href="/">About</Nav.Link>
                     <Nav.Link href="/feederform">Feeder Form</Nav.Link>
+                    <Nav.Link href="/scheduleform">Schedule Form</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

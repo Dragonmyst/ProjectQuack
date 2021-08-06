@@ -24,6 +24,21 @@ The purpose of this app is to crowdsource data about how ducks are being fed aro
    %> ```bash MySQLSetupScript.sh```
 1. Run ```yarn install``` from within the client directory to install node packages
 1. Run ```yarn install``` from within the api directory to install node packages
+1. Create a local.settings.json file within ../api folder, fill in and add the below to it:
+   ```
+   {
+      "IsEncrypted": false,
+      "Values": {
+         "AzureWebJobsStorage": "",
+         "FUNCTIONS_WORKER_RUNTIME": "node",
+         "MySQLConnection_HOST": "localhost",
+         "MySQLConnection_USER": [Root User Name]],
+         "MySQLConnection_PASSWORD": [Root User Password],
+         "MySQLConnection_DB": "projectquackdb",
+         "MYSQLConnection_PORT": ""
+      }
+   }
+   ```
 1. Run ```yarn start``` from within the client directory to serve the app 
 1. Run ```yarn start``` from within the api directory to serve the function apis
 1. App will be running on http://localhost:3000
